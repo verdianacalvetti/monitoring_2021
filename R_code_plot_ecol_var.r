@@ -44,4 +44,29 @@ pairs(meuse)
 #cadmium and cooper seems to be related. cadmium and lead are related too, etc. 
 
 #pairing only the elements part of the dataset? how to do that?
+#**SECOND LECTURE**
+#to recall the package and the data: 
+library(sp)
+data(meuse)
+attach(meuse)
+#pair with soil variables?
+#what are the numbers of the columns of these data? 3rd, 4th, 5th, 6th. 
+#start from 3 until 6. the start requires a COMMA
+pairs(meuse[,3:6])
+#subset data frame rows: slice
+#if you're using a dataset, by default R is considering columns. you can also filter by rows using some functions
+#the column is starting from 1. to state what are the columns you're starting to count
+#let's use the names of the columns
+
+#tilde in R means equal (Alt+0126 with num tast)
+
+pairs(~cadmium + copper + lead + zinc)
+pairs(~cadmium + copper + lead + zinc, data=meuse)
+
+#let's prettify the graph
+pairs(~cadmium + copper + lead + zinc, data=meuse, col="pink", pch=17)
+#par function for change single panels 
+
+
+
 
