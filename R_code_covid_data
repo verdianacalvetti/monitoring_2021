@@ -1,0 +1,18 @@
+#recall
+setwd("C:/lab/")
+#function read.table
+covid <- read.table("covid_agg.csv", header=TRUE)
+covid
+#it shows the data
+head(covid)
+summary(covid)
+#to get the names of the variables
+names(covid)
+#ggplo2: with the names of the variables
+#we also have to specify
+library(ggplot2)
+ggplot(covid, aes(x = lon, y = lat)) + geom_point()
+#in the middle, there is the ocean, the left part is usa and southamerica, canada; one point per country
+#with aesthetics we can manage to change and specify features: size of the data according to the amount of cases
+#number of cases (name of the variable, check with head function) plotted in size
+ggplot(covid, aes(x = lon, y = lat, size = cases)) + geom_point()
